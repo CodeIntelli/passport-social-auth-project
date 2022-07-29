@@ -1,7 +1,7 @@
 import session from "express-session";
 import express from "express"
 import cors from "cors"
-import passportSetup from "./passport";
+import { passportSetup, githubSetup, gitlabSetup } from "./passport";
 import SocialRout from "./routes/auth"
 import passport from "passport";
 const app = express();

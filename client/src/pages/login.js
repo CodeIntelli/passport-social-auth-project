@@ -1,10 +1,18 @@
 import Google from "../img/google.png";
-import Facebook from "../img/facebook.png";
+import Linkedin from "../img/linkedin.png";
 import Github from "../img/github.png";
-
+import Gitlab from "../img/gitlab.png"
 const login = () => {
     const google = () => {
         window.open("http://localhost:2020/auth/google", "_self")
+    }
+
+    const github = () => {
+        window.open("http://localhost:2020/auth/github", "_self")
+    }
+
+    const gitlab = () => {
+        window.open("http://localhost:2020/auth/gitlab", "_self")
     }
     return (
         <div className="login">
@@ -16,10 +24,14 @@ const login = () => {
                         Google
                     </div>
                     <div className="loginButton facebook">
-                        <img src={Facebook} alt="" className="icon" />
-                        Facebook
+                        <img src={Linkedin} alt="" className="icon" />
+                        Linkedin
                     </div>
-                    <div className="loginButton github">
+                    <div className="loginButton facebook" onClick={gitlab}>
+                        <img src={Gitlab} alt="" className="icon" />
+                        Gitlab
+                    </div>
+                    <div className="loginButton github" onClick={github}>
                         <img src={Github} alt="" className="icon" />
                         Github
                     </div>

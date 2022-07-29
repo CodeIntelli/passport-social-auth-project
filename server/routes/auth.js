@@ -29,7 +29,7 @@ SocialRout.get("/login/failed", (req, res) => {
 
 })
 
-   SocialRout.route('/logout')
+SocialRout.route('/logout')
     .get((req, res) => {
         req.logout(function (err) {
             if (err) { return next(err); }
@@ -38,6 +38,18 @@ SocialRout.get("/login/failed", (req, res) => {
     });
 SocialRout.get("/google", passport.authenticate("google", { scope: ["profile"] }))
 SocialRout.get("/google/callback", passport.authenticate("google", {
+    successRedirect: CALLBACK_URL,
+    failureRedirect: "/login/failed"
+}))
+
+SocialRout.get("/github", passport.authenticate("github", { scope: ["profile"] }))
+SocialRout.get("/github/callback", passport.authenticate("github", {
+    successRedirect: CALLBACK_URL,
+    failureRedirect: "/login/failed"
+}))
+
+SocialRout.get("/gitlab", passport.authenticate("gitlab", { scope: ["api"] }))
+SocialRout.get("/gitlab/callback", passport.authenticate("gitlab", {
     successRedirect: CALLBACK_URL,
     failureRedirect: "/login/failed"
 }))
