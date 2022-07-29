@@ -36,6 +36,7 @@ SocialRout.route('/logout')
             res.redirect(CALLBACK_URL);
         });
     });
+
 SocialRout.get("/google", passport.authenticate("google", { scope: ["profile"] }))
 SocialRout.get("/google/callback", passport.authenticate("google", {
     successRedirect: CALLBACK_URL,
