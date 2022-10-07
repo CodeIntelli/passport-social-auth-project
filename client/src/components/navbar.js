@@ -15,7 +15,7 @@ const Navbar = ({ user }) => {
                 <ul className="list">
                     <li className="listItem">
                         <img
-                            src={user.picture}
+                            src={user.avatarUrl || user.photos[0].value}
                             alt=""
                             className="avatar"
                         />

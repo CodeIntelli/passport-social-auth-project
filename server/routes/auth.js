@@ -1,7 +1,8 @@
 import express from "express";
 import passport from "passport";
 import session from "express-session";
-const CALLBACK_URL = "http://localhost:3000";
+import { CALLBACK_URL } from "../config";
+
 const SocialRout = express.Router();
 
 SocialRout.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
